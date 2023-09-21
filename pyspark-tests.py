@@ -33,7 +33,7 @@ def main():
 
     #Check that the concatenate_columns(dataf) function works as expected.
     assert concatenate_columns(input_df).collect() == expected_df.collect(), "The function does not work as expected."
-    #assert not concatenate_columns(input_df).collect() == expected_df.collect(), "This test should fail."
+    assert not concatenate_columns(input_df).collect() == expected_df.collect(), "This test should fail."
 
 if __name__ == '__main__':
     main()
