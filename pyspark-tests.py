@@ -1,4 +1,5 @@
 import pyspark.sql.functions as F
+from pyspark.sql import SparkSession
 
 def concatenate_columns(dataf):
         '''
@@ -12,6 +13,7 @@ def concatenate_columns(dataf):
         return dataf
 
 def main():
+    spark = SparkSession.builder.appName("pyspark-tests").getOrCreate()
 
     input_df = spark.createDataFrame(
         [
